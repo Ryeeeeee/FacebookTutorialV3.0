@@ -52,47 +52,50 @@ public class FacebookSendRequestsPlugin {
 	}
 
 	public void sendRequests_() {
-		
-		Bundle params = new Bundle();
-	    params.putString("message", "Learn how to make your Android apps social");
+		if (ensureOpenSession()) {
+			Bundle params = new Bundle();
+			params.putString("message",
+					"Learn how to make your Android apps social");
 
-	    WebDialog requestsDialog = (
-	        new WebDialog.RequestsDialogBuilder(activity,
-	            Session.getActiveSession(),
-	            params))
-	            .setOnCompleteListener(new OnCompleteListener() {
+			WebDialog requestsDialog = (new WebDialog.RequestsDialogBuilder(
+					activity, Session.getActiveSession(), params))
+					.setOnCompleteListener(new OnCompleteListener() {
 
-	                @Override
-	                public void onComplete(Bundle values,
-	                    FacebookException error) {
-	                    if (error != null) {
-	                        if (error instanceof FacebookOperationCanceledException) {
-	                            Toast.makeText(activity.getApplicationContext(), 
-	                                "Request cancelled", 
-	                                Toast.LENGTH_SHORT).show();
-	                        } else {
-	                            Toast.makeText(activity.getApplicationContext(), 
-	                                "Network Error", 
-	                                Toast.LENGTH_SHORT).show();
-	                        }
-	                    } else {
-	                        final String requestId = values.getString("request");
-	                        if (requestId != null) {
-	                            Toast.makeText(activity.getApplicationContext(), 
-	                                "Request sent",  
-	                                Toast.LENGTH_SHORT).show();
-	                        } else {
-	                            Toast.makeText(activity.getApplicationContext(), 
-	                                "Request cancelled", 
-	                                Toast.LENGTH_SHORT).show();
-	                        }
-	                    }   
-	                }
+						@Override
+						public void onComplete(Bundle values,
+								FacebookException error) {
+							if (error != null) {
+								if (error instanceof FacebookOperationCanceledException) {
+									Toast.makeText(
+											activity.getApplicationContext(),
+											"Request cancelled",
+											Toast.LENGTH_SHORT).show();
+								} else {
+									Toast.makeText(
+											activity.getApplicationContext(),
+											"Network Error", Toast.LENGTH_SHORT)
+											.show();
+								}
+							} else {
+								final String requestId = values
+										.getString("request");
+								if (requestId != null) {
+									Toast.makeText(
+											activity.getApplicationContext(),
+											"Request sent", Toast.LENGTH_SHORT)
+											.show();
+								} else {
+									Toast.makeText(
+											activity.getApplicationContext(),
+											"Request cancelled",
+											Toast.LENGTH_SHORT).show();
+								}
+							}
+						}
 
-	            })
-	            .build();
-	    requestsDialog.show();
-		
+					}).build();
+			requestsDialog.show();
+		}
 	}
 
 	private class SessionStatusCallback implements Session.StatusCallback,
@@ -143,7 +146,7 @@ public class FacebookSendRequestsPlugin {
 	public void onCreate(Bundle savedInstanceState) {
 		uiHelper.onCreate(savedInstanceState);
 	}
-	
+
 	public void onResume() {
 		// For scenarios where the main activity is launched and user
 		// session is not null, the session state change notification
@@ -169,6 +172,15 @@ public class FacebookSendRequestsPlugin {
 
 	public void onDestory() {
 		uiHelper.onDestroy();
+	}
+
+	private boolean ensureOpenSession() {
+		if (Session.getActiveSession() == null
+				|| !Session.getActiveSession().isOpened()) {
+			Session.openActiveSession(activity, true, statusCallback);
+			return false;
+		}
+		return true;
 	}
 
 	private FacebookDialog.Callback dialogCallback = new FacebookDialog.Callback() {

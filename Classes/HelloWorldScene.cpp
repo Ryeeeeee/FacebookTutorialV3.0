@@ -1,5 +1,4 @@
 #include "HelloWorldScene.h"
-
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #include "FacebookInterface.h"
 #endif
@@ -58,6 +57,7 @@ bool HelloWorld::init()
     menuVect.push_back("post");
     menuVect.push_back("pickFriend");
     menuVect.push_back("sendRequests");
+    menuVect.push_back("uploadImage");
     
     for (int i = 0; i < menuVect.size(); i++){
         MenuItemFont* ItemFont = MenuItemFont::create(menuVect.at(i).c_str(),CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
@@ -105,6 +105,8 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
         case 5:
             FacebookInterface::sendRequests(5);
             break;
+        case 6:
+            FacebookInterface::uploadImage(6);
         default:
             break;
         
@@ -125,6 +127,9 @@ void HelloWorld::CallFunctionName(int cbIndex,string tstr)
             CCLOG("HelloWorld::friendListStr=%s",HelloWorld::friendListStr.c_str());
             break;
         case 5:
+            break;
+        case 6:
+            CCLOG("The url of image you post is :%s",tstr.c_str());
             break;
         default:
             break;

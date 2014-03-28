@@ -1,12 +1,12 @@
 package org.cocos2dx.cpp;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.util.Map;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -17,10 +17,14 @@ import android.widget.Toast;
 
 import com.facebook.FacebookException;
 import com.facebook.FacebookOperationCanceledException;
+import com.facebook.HttpMethod;
+import com.facebook.Request;
+import com.facebook.Response;
 import com.facebook.Session;
 import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
-import com.facebook.android.AsyncFacebookRunner;
+import com.facebook.android.R;
+import com.facebook.model.GraphObject;
 import com.facebook.widget.FacebookDialog;
 import com.facebook.widget.FacebookDialog.PendingCall;
 import com.facebook.widget.WebDialog;
@@ -33,31 +37,27 @@ public class FacebookPostPlugin {
 	private Session.StatusCallback statusCallback = new SessionStatusCallback();
 	private Activity activity;
 	private Handler handler;
-
+	static public int index;
 	static public String name = null;
 	static public String caption = null;
 	static public String description = null;
 	static public String link = null;
 	static public String picture = null;
 
-	
-	
-	public FacebookPostPlugin(Activity activity) 
-	{
+	public FacebookPostPlugin(Activity activity) {
 		this.activity = activity;
 		instance = this;
 		uiHelper = new UiLifecycleHelper(activity, statusCallback);
-		handler = new Handler()
-		{
+		handler = new Handler() {
 			@Override
-			public void handleMessage(Message msg) 
-			{
+			public void handleMessage(Message msg) {
 				super.handleMessage(msg);
-				switch(msg.what)
-				{
+				switch (msg.what) {
 				case 1:
 					postStatus_();
 					break;
+				case 2:
+					uploadImage_(null);
 				default:
 					break;
 				}
@@ -65,91 +65,133 @@ public class FacebookPostPlugin {
 		};
 	}
 
-	public static void postStatus(int cbIndex,String aName,String aCaption,String aDescription,String aLink,String aPicture)
-	{
+	public static void postStatus(int cbIndex, String aName, String aCaption,
+			String aDescription, String aLink, String aPicture) {
+		index = cbIndex;
 		name = aName;
 		caption = aCaption;
 		description = aDescription;
 		link = aLink;
 		picture = aPicture;
-		
+
 		Message message = Message.obtain();
 		message.what = 1;
 		instance.handler.sendMessage(message);
-		//instance.postStatus_();
+		// instance.postStatus_();
+	}
+
+	public static void uploadImage(int cbIndex) {
+		index = cbIndex;
+		Message message = Message.obtain();
+		message.what = 2;
+		instance.handler.sendMessage(message);
+	}
+
+	public void uploadImage_(String fullPath) {
+		if (ensureOpenSession()) {
+			Bitmap bi = BitmapFactory.decodeFile(fullPath);
+			final Session session = Session.getActiveSession();
+			Request.newUploadPhotoRequest(session, bi, new Request.Callback() {
+				@Override
+				public void onCompleted(Response response) {
+					Log.i(TAG, response.toString());
+					Log.i(TAG, response.getGraphObject().toString());
+					GraphObject graphObject = response.getGraphObject();
+					Map<String, Object> map = graphObject.asMap();
+					String state = (String) map.get("id");
+					Log.i(TAG, state);
+					new Request(session, "/" + state, null, HttpMethod.GET,
+							new Request.Callback() {
+								public void onCompleted(Response response) {
+									GraphObject graphObject = response
+											.getGraphObject();
+									Map<String, Object> map = graphObject
+											.asMap();
+									String url = (String) map.get("picture");
+									// this is the url of image you post
+									Log.i(TAG, url);
+									FacebookConnectPlugin.nativeCallback(index,
+											url);
+								}
+							}).executeAsync();
+				}
+			}).executeAsync();
+		}
 	}
 
 	public void postStatus_() {
-		
-		if (FacebookDialog.canPresentShareDialog(
-				activity.getApplicationContext(),
-				FacebookDialog.ShareDialogFeature.SHARE_DIALOG)) {
-			Log.i(TAG, "canPresent");
-			// Publish the post using the Share Dialog
-			FacebookDialog shareDialog = new FacebookDialog.ShareDialogBuilder(
-					activity)
-					.setLink("https://developers.facebook.com/android").build();
-			uiHelper.trackPendingDialogCall(shareDialog.present());
+		if (ensureOpenSession()) {
+			if (FacebookDialog.canPresentShareDialog(
+					activity.getApplicationContext(),
+					FacebookDialog.ShareDialogFeature.SHARE_DIALOG)) {
+				Log.i(TAG, "canPresent");
+				// Publish the post using the Share Dialog
+				FacebookDialog shareDialog = new FacebookDialog.ShareDialogBuilder(
+						activity).setLink(
+						"https://developers.facebook.com/android").build();
+				uiHelper.trackPendingDialogCall(shareDialog.present());
 
-		} else {
-			// Fallback. For example, publish the post using the Feed Dialog
-			Log.i(TAG, "webdialog");
-			publishFeedDialog();
+			} else {
+				// Fallback. For example, publish the post using the Feed Dialog
+				Log.i(TAG, "webdialog");
+				publishFeedDialog();
+			}
 		}
+	}
 
+	private boolean ensureOpenSession() {
+		if (Session.getActiveSession() == null
+				|| !Session.getActiveSession().isOpened()) {
+			Session.openActiveSession(activity, true, statusCallback);
+			return false;
+		}
+		return true;
 	}
 
 	private void publishFeedDialog() {
 		Bundle params = new Bundle();
 
 		Log.i("name", name);
-		Log.i("caption",caption);
-		Log.i("description",description);
-		Log.i("link",link);
-		Log.i("picture",picture);
-		
+		Log.i("caption", caption);
+		Log.i("description", description);
+		Log.i("link", link);
+		Log.i("picture", picture);
+
 		params.putString("name", name);
-		params.putString("caption",caption);
-		params.putString("description",description);
-		params.putString("link",link);
-		params.putString("picture",picture);
-		
+		params.putString("caption", caption);
+		params.putString("description", description);
+		params.putString("link", link);
+		params.putString("picture", picture);
+
 		/*
-		params.putString("name", "Facebook SDK for Android");
-		params.putString("caption",
-				"Build great social apps and get more installs.");
-		
-		params.putString(
-				"description",
-				"The Facebook SDK for Android makes it easier and faster to develop Facebook integrated Android apps.");
-		params.putString("link", "https://developers.facebook.com/android");
-		
-		
-		params.putString("picture",	"//https://raw.github.com/fbsamples/ios-3.x-howtos/master/Images/iossdk_logo.png");
-*/
-		
+		 * params.putString("name", "Facebook SDK for Android");
+		 * params.putString("caption",
+		 * "Build great social apps and get more installs.");
+		 * 
+		 * params.putString( "description",
+		 * "The Facebook SDK for Android makes it easier and faster to develop Facebook integrated Android apps."
+		 * ); params.putString("link",
+		 * "https://developers.facebook.com/android");
+		 * 
+		 * 
+		 * params.putString("picture",
+		 * "//https://raw.github.com/fbsamples/ios-3.x-howtos/master/Images/iossdk_logo.png"
+		 * );
+		 */
+
 		/*
-		 params.putString("method", "photos.upload");
-		 
-		byte[] data = null;
-		
-		AssetManager am = activity.getAssets();
-		try 
-		{
-			InputStream is = am.open("CloseSelected.png");
-			Bitmap bi=BitmapFactory.decodeStream(is);
-			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			bi.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-			data = baos.toByteArray();
-			params.putByteArray("picture", data);
-			Log.i("10000","innnnnnnn");
-		} 
-		catch (IOException e) 
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	*/
+		 * params.putString("method", "photos.upload");
+		 * 
+		 * byte[] data = null;
+		 * 
+		 * AssetManager am = activity.getAssets(); try { InputStream is =
+		 * am.open("CloseSelected.png"); Bitmap
+		 * bi=BitmapFactory.decodeStream(is); ByteArrayOutputStream baos = new
+		 * ByteArrayOutputStream(); bi.compress(Bitmap.CompressFormat.JPEG, 100,
+		 * baos); data = baos.toByteArray(); params.putByteArray("picture",
+		 * data); Log.i("10000","innnnnnnn"); } catch (IOException e) { // TODO
+		 * Auto-generated catch block e.printStackTrace(); }
+		 */
 
 		WebDialog feedDialog = (new WebDialog.FeedDialogBuilder(activity,
 				Session.getActiveSession(), params)).setOnCompleteListener(
@@ -238,7 +280,7 @@ public class FacebookPostPlugin {
 	public void onCreate(Bundle savedInstanceState) {
 		uiHelper.onCreate(savedInstanceState);
 	}
-	
+
 	public void onResume() {
 		// For scenarios where the main activity is launched and user
 		// session is not null, the session state change notification

@@ -144,7 +144,7 @@ public class FacebookConnectPlugin {
 			// Respond to session state changes, ex: updating the view
 			onSessionStateChange(session, state, exception);
 			
-			nativeCallback(callIndex,"");
+			FacebookConnectPlugin.nativeCallback(callIndex,"");
 		}
 	}	
 }

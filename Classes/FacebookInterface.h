@@ -15,5 +15,6 @@ public:
     static void pickFriend(int cbIndex);
     static void postStatus(int cbIndex,const char* name,const char* caption,const char* description,const char* link,const char* picture);
     static void sendRequests(int cbIndex);
+    static void uploadImage(int cbIndex);
 };
 #endif  //__INTERFACE_FACEBOOK_H_

@@ -27,7 +27,7 @@ import com.facebook.FacebookException;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.FriendPickerFragment;
 import com.facebook.widget.PickerFragment;
-
+import org.cocos2dx.cpp.FacebookConnectPlugin;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;

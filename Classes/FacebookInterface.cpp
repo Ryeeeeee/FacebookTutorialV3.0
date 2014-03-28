@@ -134,4 +134,18 @@ void FacebookInterface::sendRequests(int cbIndex){
 		t.env->DeleteLocalRef(t.classID);
 	}   
 }
+
+void FacebookInterface::uploadImage(int cbIndex){
+    
+    cocos2d::JniMethodInfo t;
+	if (cocos2d::JniHelper::getStaticMethodInfo(t
+                                                , FBJavaPostClassName
+                                                , "uploadImage"
+                                                , "(I)V"))
+	{
+		t.env->CallStaticVoidMethod(t.classID, t.methodID, cbIndex);
+		t.env->DeleteLocalRef(t.classID);
+	}   
+
+}
 #endif

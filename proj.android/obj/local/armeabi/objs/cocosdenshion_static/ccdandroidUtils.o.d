@@ -11,23 +11,23 @@ obj/local/armeabi/objs/cocosdenshion_static/ccdandroidUtils.o: \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/ccConfig.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../base/CCPlatformConfig.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/platform/android/CCPlatformDefine.h \
- /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/android/log.h \
+ /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/android/log.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../base/CCGeometry.h \
- /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/math.h \
+ /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/math.h \
  /Users/su1livan/Desktop/android-ndk-r9c/sources/cxx-stl/gnu-libstdc++/4.8/include/functional \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/ccMacros.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../base/CCConsole.h \
- /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/sys/select.h \
+ /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/sys/select.h \
  /Users/su1livan/Desktop/android-ndk-r9c/sources/cxx-stl/gnu-libstdc++/4.8/include/thread \
  /Users/su1livan/Desktop/android-ndk-r9c/sources/cxx-stl/gnu-libstdc++/4.8/include/vector \
  /Users/su1livan/Desktop/android-ndk-r9c/sources/cxx-stl/gnu-libstdc++/4.8/include/map \
  /Users/su1livan/Desktop/android-ndk-r9c/sources/cxx-stl/gnu-libstdc++/4.8/include/mutex \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/platform/android/CCStdC.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../base/CCPlatformMacros.h \
- /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/stdlib.h \
- /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/alloca.h \
- /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/strings.h \
- /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/memory.h \
+ /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/stdlib.h \
+ /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/alloca.h \
+ /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/strings.h \
+ /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/memory.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/CCActionInterval.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/CCNode.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/ccMacros.h \
@@ -36,7 +36,7 @@ obj/local/armeabi/objs/cocosdenshion_static/ccdandroidUtils.o: \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../math/kazmath/include/kazmath/kazmath.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../math/kazmath/include/kazmath/vec2.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../math/kazmath/include/kazmath/vec3.h \
- /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/assert.h \
+ /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/assert.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../math/kazmath/include/kazmath/vec4.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../math/kazmath/include/kazmath/utility.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../math/kazmath/include/kazmath/mat3.h \
@@ -49,10 +49,10 @@ obj/local/armeabi/objs/cocosdenshion_static/ccdandroidUtils.o: \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/ccCArray.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../base/CCDataVisitor.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/platform/android/CCGL.h \
- /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/GLES2/gl2platform.h \
- /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/KHR/khrplatform.h \
- /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/GLES2/gl2.h \
- /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/GLES2/gl2ext.h \
+ /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/GLES2/gl2platform.h \
+ /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/KHR/khrplatform.h \
+ /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/GLES2/gl2.h \
+ /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/GLES2/gl2ext.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/ccGLStateCache.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/CCGLProgram.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/CCScriptSupport.h \
@@ -99,7 +99,7 @@ obj/local/armeabi/objs/cocosdenshion_static/ccdandroidUtils.o: \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/renderer/CCRenderCommandPool.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../base/CCDictionary.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/uthash.h \
- /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/inttypes.h \
+ /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/inttypes.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../base/CCArray.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../base/CCString.h \
  /Users/su1livan/Desktop/android-ndk-r9c/sources/cxx-stl/gnu-libstdc++/4.8/include/sstream \
@@ -213,7 +213,7 @@ obj/local/armeabi/objs/cocosdenshion_static/ccdandroidUtils.o: \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/CCComponent.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/CCComponentContainer.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/CCDeprecated.h \
- /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/jni.h \
+ /Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/jni.h \
  /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/platform/android/jni/JniHelper.h
 
 /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/ccdandroidUtils.h:
@@ -238,11 +238,11 @@ obj/local/armeabi/objs/cocosdenshion_static/ccdandroidUtils.o: \
 
 /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/platform/android/CCPlatformDefine.h:
 
-/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/android/log.h:
+/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/android/log.h:
 
 /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../base/CCGeometry.h:
 
-/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/math.h:
+/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/math.h:
 
 /Users/su1livan/Desktop/android-ndk-r9c/sources/cxx-stl/gnu-libstdc++/4.8/include/functional:
 
@@ -250,7 +250,7 @@ obj/local/armeabi/objs/cocosdenshion_static/ccdandroidUtils.o: \
 
 /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../base/CCConsole.h:
 
-/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/sys/select.h:
+/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/sys/select.h:
 
 /Users/su1livan/Desktop/android-ndk-r9c/sources/cxx-stl/gnu-libstdc++/4.8/include/thread:
 
@@ -264,13 +264,13 @@ obj/local/armeabi/objs/cocosdenshion_static/ccdandroidUtils.o: \
 
 /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../base/CCPlatformMacros.h:
 
-/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/stdlib.h:
+/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/stdlib.h:
 
-/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/alloca.h:
+/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/alloca.h:
 
-/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/strings.h:
+/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/strings.h:
 
-/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/memory.h:
+/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/memory.h:
 
 /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/CCActionInterval.h:
 
@@ -288,7 +288,7 @@ obj/local/armeabi/objs/cocosdenshion_static/ccdandroidUtils.o: \
 
 /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../math/kazmath/include/kazmath/vec3.h:
 
-/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/assert.h:
+/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/assert.h:
 
 /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../math/kazmath/include/kazmath/vec4.h:
 
@@ -314,13 +314,13 @@ obj/local/armeabi/objs/cocosdenshion_static/ccdandroidUtils.o: \
 
 /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/platform/android/CCGL.h:
 
-/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/GLES2/gl2platform.h:
+/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/GLES2/gl2platform.h:
 
-/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/KHR/khrplatform.h:
+/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/KHR/khrplatform.h:
 
-/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/GLES2/gl2.h:
+/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/GLES2/gl2.h:
 
-/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/GLES2/gl2ext.h:
+/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/GLES2/gl2ext.h:
 
 /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/ccGLStateCache.h:
 
@@ -414,7 +414,7 @@ obj/local/armeabi/objs/cocosdenshion_static/ccdandroidUtils.o: \
 
 /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/uthash.h:
 
-/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/inttypes.h:
+/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/inttypes.h:
 
 /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../base/CCArray.h:
 
@@ -642,6 +642,6 @@ obj/local/armeabi/objs/cocosdenshion_static/ccdandroidUtils.o: \
 
 /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/CCDeprecated.h:
 
-/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-15/arch-arm/usr/include/jni.h:
+/Users/su1livan/Desktop/android-ndk-r9c/platforms/android-18/arch-arm/usr/include/jni.h:
 
 /Users/su1livan/Desktop/Tutorial/FacebookTutorial/proj.android/../cocos2d/cocos/audio/android/../../2d/platform/android/jni/JniHelper.h:
