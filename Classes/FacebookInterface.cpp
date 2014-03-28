@@ -135,12 +135,12 @@ void FacebookInterface::sendRequests(int cbIndex){
 	}   
 }
 
-void FacebookInterface::uploadImage(int cbIndex){
+void FacebookInterface::uploadLocalImage(int cbIndex){
     
     cocos2d::JniMethodInfo t;
 	if (cocos2d::JniHelper::getStaticMethodInfo(t
                                                 , FBJavaPostClassName
-                                                , "uploadImage"
+                                                , "uploadLocalImage"
                                                 , "(I)V"))
 	{
 		t.env->CallStaticVoidMethod(t.classID, t.methodID, cbIndex);

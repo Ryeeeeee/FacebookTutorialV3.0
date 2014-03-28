@@ -57,7 +57,7 @@ public class FacebookPostPlugin {
 					postStatus_();
 					break;
 				case 2:
-					uploadImage_(null);
+					uploadLocalImage_(null);
 				default:
 					break;
 				}
@@ -80,14 +80,14 @@ public class FacebookPostPlugin {
 		// instance.postStatus_();
 	}
 
-	public static void uploadImage(int cbIndex) {
+	public static void uploadLocalImage(int cbIndex) {
 		index = cbIndex;
 		Message message = Message.obtain();
 		message.what = 2;
 		instance.handler.sendMessage(message);
 	}
 
-	public void uploadImage_(String fullPath) {
+	public void uploadLocalImage_(String fullPath) {
 		if (ensureOpenSession()) {
 			Bitmap bi = BitmapFactory.decodeFile(fullPath);
 			final Session session = Session.getActiveSession();

@@ -57,7 +57,7 @@ bool HelloWorld::init()
     menuVect.push_back("post");
     menuVect.push_back("pickFriend");
     menuVect.push_back("sendRequests");
-    menuVect.push_back("uploadImage");
+    menuVect.push_back("uploadLocalImage");
     
     for (int i = 0; i < menuVect.size(); i++){
         MenuItemFont* ItemFont = MenuItemFont::create(menuVect.at(i).c_str(),CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
@@ -106,7 +106,7 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
             FacebookInterface::sendRequests(5);
             break;
         case 6:
-            FacebookInterface::uploadImage(6);
+            FacebookInterface::uploadLocalImage(6);
         default:
             break;
         
